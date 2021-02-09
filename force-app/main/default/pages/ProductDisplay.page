@@ -1,0 +1,40 @@
+<apex:page sidebar="false" lightningStyleSheets="true" controller="ProductControllerVF">
+    <apex:form >
+        <style type="text/css">
+        	.asideText { font-style: italic; }
+    	</style>
+        <style>
+            .round3 {
+            border: 2px grey;
+            border-radius: 5px;
+            }
+            
+        </style>
+        <apex:slds />
+        <div class="slds-scope"> 
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:actionFunction name="updateFun" action="{!doNothing}" rerender="pb"/>
+                Select a Product Family: <apex:selectList value="{!strFamily}" size="1" multiselect="false" styleClass="round3"> 
+                    <apex:selectOptions value="{!lstOptions}">
+                    </apex:selectOptions>
+                </apex:selectList> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+                <apex:commandButton value="Click Here To Get The Results" style="padding: 3px 15px;" onclick="updateFun()" reRender="pb"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock id="pb">
+            <apex:pageBlockTable value="{!ProductRecords}" var="pr">
+                <apex:column >
+                    <apex:facet name="header" > Product Name </apex:facet>
+                    <apex:outputlink value="/{!pr.Id}">{!pr.Name}</apex:outputlink> <br/>
+                </apex:column>
+                <apex:column value="{!pr.ProductCode}"/>
+                <apex:column value="{!pr.family}"/>
+                <apex:column value="{!pr.description}"/>   
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        </div>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:page id="landingPage" sidebar="false" title="{!$Label.site.site_login}">
+    <div align="center">
+        <apex:image value="https://saramorgandotnet.files.wordpress.com/2021/01/landingpageimage.png?resize=1200%2C800" />
+    </div>
+</apex:page>

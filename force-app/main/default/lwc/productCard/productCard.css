@@ -1,0 +1,9 @@
+img.product {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+p.placeholder {
+    text-align: center;
+    color: #c23335;
+}

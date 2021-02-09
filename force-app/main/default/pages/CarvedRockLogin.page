@@ -1,0 +1,37 @@
+<apex:page sidebar="false" controller="CommunitiesLoginController" showheader="false" standardStylesheets="true">
+    <style>
+        /* Any custom CSS would go here */
+        form {
+        margin: 0 auto;
+        margin-top: 20px;
+        }
+        #container {
+        position: fixed;
+        width: 340px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        margin-top: -140px;
+        margin-left: -170px;
+        background: #fff;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        
+        }
+    </style>
+    <apex:Pagemessages id="msg"/>
+    <div id="container">
+        <apex:form >
+            <center><b>Carved Rock Fitness Login</b><br/>
+                <apex:panelGrid columns="2">
+                    <p><b>UserName</b><br />	
+                        <apex:inputText required="true" id="username" value="{!username}"/></p>
+                    <p><b>Password</b><br />
+                        <apex:inputSecret id="password" value="{!password}"/></p>
+                </apex:panelGrid>
+                <p><apex:commandButton action="{!loginUser}" value="Login" id="Login"/></p>
+            </center>
+        </apex:form>
+    </div>
+</apex:page>
