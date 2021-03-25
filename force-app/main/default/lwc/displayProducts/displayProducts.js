@@ -3,10 +3,6 @@
 
 import { LightningElement, api, wire } from 'lwc';
 
-// Ligthning Message Service and message channels
-//import { publish, MessageContext } from 'lightning/messageService';
-//import PRODUCT_SELECTED_MESSAGE from '@salesforce/messageChannel/ProductSelected__c';
-
 // getProducts() method in ProductController Apex class
 import getProducts from '@salesforce/apex/ProductController.getProducts';
 
@@ -20,19 +16,9 @@ export default class DisplayProducts extends LightningElement {
     pageSize;             // The number of items on a page.
     filters = {};         // JSON.stringified version of filters to pass to apex  
    
-    // Load context for Ligthning Messaging Service 
-    //@wire(MessageContext) messageContext;
-
     // Load the list of available products.
     @wire(getProducts, { filters: '$filters', pageNumber: '$pageNumber' })
     products;
-
-    //Publish ProductSelected message
-    // handleProductSelected(event) {  
-    //     publish(this.messageContext, PRODUCT_SELECTED_MESSAGE, {
-    //         productId: event.detail
-    //     });
-    // }
 
     handleProductSelected(productId) {
         this.recordId = productId;
