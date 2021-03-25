@@ -1,8 +1,12 @@
 {
   "orgName": "saranettles company",
   "edition": "Developer",
-  "features": [],
+  "hasSampleData": true,
+  "features": ["Communities", "EnableSetPasswordInApi"],
   "settings": {
+    "communitiesSettings": {
+      "enableNetworksEnabled": true	            
+    },
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
